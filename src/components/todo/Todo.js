@@ -1,6 +1,8 @@
 import "./todo.css";
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
+import { MdOutlineDone } from "react-icons/md";
+
 const Todo = () => {
   const [task, setTask] = useState("");
   const [todo, addTodos] = useState([]);
@@ -51,7 +53,7 @@ const Todo = () => {
             {todo.map((ele) => {
               return (
                 <>
-                  <p className="tasks">{ele.task}</p>
+                  <p className="tasks">{ele.task}  <MdOutlineDone className='done'/></p> 
                 </>
               );
             })}
