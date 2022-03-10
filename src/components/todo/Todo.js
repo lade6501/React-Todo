@@ -3,7 +3,18 @@ import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 const Todo = () => {
   const [task, setTask] = useState("");
-  const [todos, addTodos] = useState([]);
+  const [todo, addTodos] = useState([]);
+  const handleAddTodo = () => {
+    const newTask = {
+      id: 1 + Math.random(),
+      task,
+    };
+
+    const todos = [...todo];
+    todos.push(newTask);
+    addTodos(todos);
+    setTask("");
+  };
   return (
     <>
       <div className="form-container">
@@ -26,26 +37,23 @@ const Todo = () => {
           <Button
             variant="outline-secondary"
             size="lg"
-            onClick={() => {
-              addTodos([
-                {
-                  task,
-                },
-              ]);
-              setTask("");
-            }}
+            onClick={() => handleAddTodo()}
           >
             Add
           </Button>
         </Form>
       </div>
-      {!todos.length > 0 ? (
+      {!todo.length > 0 ? (
         <div className="display-section">No Data</div>
       ) : (
         <div className="display-section">
           <h1>
-            {todos.map((ele) => {
-              return <span className="tasks">{ele.task}</span>;
+            {todo.map((ele) => {
+              return (
+                <>
+                  <p className="tasks">{ele.task}</p>
+                </>
+              );
             })}
           </h1>
         </div>
