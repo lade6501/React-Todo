@@ -9,7 +9,7 @@ function App() {
       <header>
         <Header />
       </header>
-      <main className="container">
+      <main className="main-container">
         <Todo />
       </main>
     </>
