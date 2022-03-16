@@ -66,4 +66,10 @@ input[type="checkbox"] {
       background-color: hsl(0, 0%, 97%);
     }
   }
+
+  &:focus,
+  &:hover {
+      box-shadow: 0 0 0 3px hsl(0, 0%, 85%);
+      border-color: hsl(0, 0%, 40%);
+  }
 }
