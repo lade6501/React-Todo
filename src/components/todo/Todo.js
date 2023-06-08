@@ -2,6 +2,7 @@ import "./todo.scss";
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 import { MdOutlineDone } from "react-icons/md";
+import React from "react";
 
 const Todo = () => {
   const [task, setTask] = useState("");
@@ -55,13 +56,12 @@ const Todo = () => {
                 <>
                   <div className="flex-container">
                     <div className="tasknumber">
-                      <input type="checkbox" id='task'/>
-                      
+                      <input type="checkbox" id="task" />
                     </div>
                     <div className="userdetails">
                       {" "}
                       {/* <p className="tasks">{ele.task}</p>{" "} */}
-                      <label for='task'>{ele.task}</label>
+                      <label for="task">{ele.task}</label>
                     </div>
                     <div className="donebutton">
                       <MdOutlineDone className="done" />
